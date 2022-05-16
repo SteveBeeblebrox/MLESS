@@ -1,0 +1,4 @@
+# MLESS ![GitHub](https://img.shields.io/github/license/SteveBeeblebrox/MLESS?style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/SteveBeeblebrox/MLESS?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues-raw/SteveBeeblebrox/MLESS?style=flat-square) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SteveBeeblebrox/MLESS?style=flat-square) ![GitHub contributors](https://img.shields.io/github/contributors/SteveBeeblebrox/MLESS?color=007EC6&style=flat-square) ![GitHub Repo stars](https://img.shields.io/github/stars/SteveBeeblebrox/MLESS?style=flat-square)
+A standalone Less CSS transpiler with support for HTML style tags. MLESS versions correspond to Less. **Note that MLESS only transpiles Less and does not generate any errors itself. For best results, use with an editor that provides error messages such as Visual Studio Code.**
+
+Run with `--help` for more details.
