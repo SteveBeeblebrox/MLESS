@@ -25,7 +25,7 @@ fn main() {
             .short("o")
             .long("out")
             .value_name("OUTPUT")
-            .help("Sets the output file to write transpiled code to instead of using the input file's name with the extension changed to .css or .html in the case of HTML files (When set but blank, output is written to stdout; if set to a directory and an input file is provided, the output file will be written to the given directory with the extension changed to .css/.html)")
+            .help("Sets the output file to write transpiled code to instead of using the input file's name with the extension changed to .css or .html in the case of HTML files (When set to '-' or set but blank, output is written to stdout; if set to a directory and an input file is provided, the output file will be written to the given directory with the extension changed to .css/.html)")
             .default_value("")
             .hide_default_value(true)
             .takes_value(true)
@@ -44,7 +44,7 @@ fn main() {
         )
 
         .arg(Arg::with_name("INPUT")
-            .help("Sets the input file to compile (Leave blank to read from stdin)")
+            .help("Sets the input file to compile (Leave blank or set to '-' to read from stdin)")
             .index(1)
         )
         .get_matches();
