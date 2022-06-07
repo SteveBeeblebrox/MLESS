@@ -64,15 +64,15 @@ fn main() {
 
         // Determine input file (or stdin)
         let (input_file, input_text) = match matches.value_of("INPUT") {
-            Some(value) => (Some(String::from(value)), fs::read_to_string(value).expect("Error reading target file")),
-            None => {
+            Some("-") | None => {
                 let stdin = io::stdin();
                 let mut stdin = stdin.lock();
                 let mut line = String::new();
 
                 stdin.read_to_string(&mut line).expect("Error reading stdin");
                 (None, String::from(line))
-            }
+            },
+            Some(value) => (Some(String::from(value)), fs::read_to_string(value).expect("Error reading target file"))
         };
 
         let html = matches.occurrences_of("html") > 0;
@@ -87,7 +87,7 @@ fn main() {
         };
 
         match matches.value_of("output") {
-            Some("") if matches.occurrences_of("output") > 0 => print!("{}", result.as_str()),
+            Some("-") | Some("") if matches.occurrences_of("output") > 0 => print!("{}", result.as_str()),
             None | Some("") => {
                 match input_file {
                     Some(input_file) => {
